@@ -13,11 +13,23 @@ License: GPLv2 or later
 */
 
 include 'HTTP/Request2.php'; // Pear module install with pear install HTTP_Request2-beta
+require_once('Cache/Lite.php'); // Pear module install with pear install Cache_Lite
 
 define('APZ_SERVER_URL', 'auth.zapquebec.org'); // Where is your auth server
 define('APZ_SECURE', 'TRUE'); // Do we use HTTPS?
 define('APZ_WS_PATH', 'ws'); // Where is the webservice? By default it's /ws/
 
+
+global $Cache_Lite;
+// Set a few options
+$options = array(
+    'cacheDir' => '/tmp/',
+    'lifeTime' => 180,
+	'automaticSerialization' => true	
+);
+
+// Create a Cache_Lite object
+$Cache_Lite = new Cache_Lite($options);
 
 class AuthPuppyNode
 {
@@ -27,12 +39,17 @@ class AuthPuppyNode
 	var $ws_path;
 	var $rest;
 	var $node_info = false;
+	var $cache;
 	
 	function __construct($id, $server_address, $ws_path, $secure=false){
+		global $Cache_Lite;
+		
 		$this->ws_path = $ws_path;
 		$this->server_address = $server_address;
 		$this->id = $id;
 		$this->secure = $secure;
+		
+		$this->cache = $Cache_Lite;
 	}
 	
 	function OnlineUsers(){
@@ -50,7 +67,6 @@ class AuthPuppyNode
 		$url .= '://' . $this->server_address . '/';
 		$url .= $this->ws_path . '/';
 		$url .= '?action=get&object_class=Node&object_id=' . $this->id;
-		echo $url;
 		
 		$request = new HTTP_Request2(
 	        'http://rapidshare.com/cgi-bin/rsapi.cgi?sub=nextuploadserver_v1'
@@ -66,8 +82,11 @@ class AuthPuppyNode
 		if($json->result != 1){
 			return false;
 		}
-		
+		// Store the values in the object
 		$this->node_info = $json->values;
+		
+		// Save in cache
+		$this->cache->save($this, $this->id);
 		
 	}
 	
@@ -77,10 +96,26 @@ class AuthPuppyNode
 	}
 	
 	static public function GetNode($node_id){
+		global $Cache_Lite;
+		
+		// Check for cached objects
+		if($object = $Cache_Lite->get($node_id)){
+			return $object;
+		}
+		
+		// No cache, we fetch the object and save it in cache
+		$object = AuthPuppyNode::CreateFromConstant($node_id);
+		
+		print_r($object);
+		
+		$Cache_Lite->save($object, $node_id);
+		
+		return $object;
+		
 		
 	}
 }
 
-$node = AuthPuppyNode::CreateFromConstant('433');
+$node = AuthPuppyNode::GetNode('433');
 
 echo $node->OnlineUsers();
