@@ -1,6 +1,7 @@
 <?php
 
-require_once "Request2.php";
+require_once 'PEAR.php';
+require_once 'HTTP/Request2.php';
 
 class RESTClient {
 
@@ -30,7 +31,7 @@ class RESTClient {
            $this->req->setBasicAuth($this->user_name, $this->password);
         }        
 
-        switch($method) {
+        switch(strtoupper($method)) {
             case "GET":
                 $this->req->setMethod(HTTP_REQUEST_METHOD_GET);
                 break;
@@ -58,13 +59,14 @@ class RESTClient {
     }
 
     public function sendRequest() {
-        $this->response = $this->req->sendRequest();
+        $this->response = $this->req->send();
 
         if (PEAR::isError($this->response)) {
             echo $this->response->getMessage();
+			echo 'ERROR!!!!';
             die();
         } else {
-            $this->responseBody = $this->req->getResponseBody();
+            $this->responseBody = $this->req->getBody();
         }
     }
 
