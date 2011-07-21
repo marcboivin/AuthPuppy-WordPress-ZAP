@@ -66,5 +66,7 @@
 	<div id="container">
     <header>
 		<a href="http://zapquebec.org" id="logo">Service offert par ZAP Québec</a>
+		<a href="http://www.facebook.com/pages/ZAP-Qu%C3%A9bec/114289998224" id="facebook">Notre page Facebok</a>
+		<a href="http://twitter.com/#!/zapquebec" id="twitter">Suivez nous sur Twitter</a>
     </header>
     <div id="main" role="main">
