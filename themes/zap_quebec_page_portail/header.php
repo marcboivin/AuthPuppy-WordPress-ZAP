@@ -65,6 +65,6 @@
 <body <?php body_class(); ?>>
 	<div id="container">
     <header>
-
+		<a href="http://zapquebec.org" id="logo">Service offert par ZAP Québec</a>
     </header>
     <div id="main" role="main">

@@ -233,6 +233,15 @@ body{
 }
 
 
+#logo {
+    background: url(http://moijezap.org/medias/img/zapquebec.png) no-repeat;
+    display: block;
+    height: 160px;
+    overflow: hidden;
+    text-indent: -5000em;
+    width: 100px;
+}
+
 
 
 
