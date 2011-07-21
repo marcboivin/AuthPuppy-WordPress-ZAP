@@ -115,7 +115,3 @@ class AuthPuppyNode
 		
 	}
 }
-
-$node = AuthPuppyNode::GetNode('433');
-
-echo $node->OnlineUsers();
