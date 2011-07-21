@@ -232,6 +232,11 @@ body{
     min-height: 100%;
 }
 
+#container{
+    margin: 30px auto;
+    width: 940px;
+}
+
 
 #logo {
     background: url(http://moijezap.org/medias/img/zapquebec.png) no-repeat;
