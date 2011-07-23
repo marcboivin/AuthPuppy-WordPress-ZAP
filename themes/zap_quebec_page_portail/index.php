@@ -15,6 +15,8 @@
 						'show_summary' => 1,
 						'items' => 3 
 					);
+					
+			$rss->widget($args);
 			
 	?>
 </section>
