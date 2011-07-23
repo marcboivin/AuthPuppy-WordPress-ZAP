@@ -16,7 +16,7 @@
 						'items' => 3 
 					);
 					
-			$rss->widget($args);
+			$rss->widget($args, array());
 			
 	?>
 </section>
