@@ -17,7 +17,8 @@
 						'items' => 3,
 						'before_widget' => '',
 						'before_title' => '',
-						'after_title' => ''
+						'after_title' => '',
+						'after_widget' => ''
 						
 					);
 					
