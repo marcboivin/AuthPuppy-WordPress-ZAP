@@ -64,6 +64,9 @@ class AuthPuppyNode
 	
 	function title(){
 		$this->fetch_node_info();
+		
+		print_r($this->node_info);
+		
 		if( !empty( $this->node_info['Name'] ) ){
 			return $this->node_info['Name'];
 		} else {
