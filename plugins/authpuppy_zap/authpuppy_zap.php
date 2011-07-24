@@ -16,7 +16,7 @@ include 'HTTP/Request2.php'; // Pear module install with pear install HTTP_Reque
 require_once('Cache/Lite.php'); // Pear module install with pear install Cache_Lite
 
 define('APZ_SERVER_URL', 'auth.zapquebec.org'); // Where is your auth server
-define('APZ_SECURE', 'TRUE'); // Do we use HTTPS?
+define('APZ_SECURE', 'FALSE'); // Do we use HTTPS?
 define('APZ_WS_PATH', 'ws'); // Where is the webservice? By default it's /ws/
 
 // If we initialize before that, we fubar the whole thing
