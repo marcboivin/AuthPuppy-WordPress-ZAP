@@ -247,6 +247,17 @@ body{
     width: 100px;
 }
 
+#content {
+    background: #e6e7e7;
+    float: right;
+    width: 605px;
+}
+
+#nouvelles-zap {
+    float: left;
+    width: 252px;
+}
+
 
 
 
