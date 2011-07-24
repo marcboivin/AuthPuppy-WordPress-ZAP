@@ -19,7 +19,8 @@ define('APZ_SERVER_URL', 'auth.zapquebec.org'); // Where is your auth server
 define('APZ_SECURE', 'TRUE'); // Do we use HTTPS?
 define('APZ_WS_PATH', 'ws'); // Where is the webservice? By default it's /ws/
 
-add_action('init', 'apz_init');
+// If we initialize before that, we fubar the whole thing
+add_action('wp-head', 'apz_init');
 
 
 global $Cache_Lite;
@@ -141,7 +142,7 @@ function apz_init(){
 */
 function apz_hijack_title($title){
 	global $ap_node;
-	
+	// It break the loading, check it out.
 	$node_title = $ap_node->title();
 	
 	if( $node_title ){
