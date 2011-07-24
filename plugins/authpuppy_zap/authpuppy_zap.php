@@ -59,6 +59,15 @@ class AuthPuppyNode
 		return $nb;
 	}
 	
+	function title(){
+		$this->fetch_node_info();
+		if( !empty( $this->node_info['Name'] ) ){
+			return $this->node_info['Name'];
+		} else {
+			return false;
+		}
+	}
+	
 	private function fetch_node_info(){
 		if($this->node_info)
 			return true; // True means, infos are there leave the request alone
@@ -68,11 +77,6 @@ class AuthPuppyNode
 		$url .= $this->ws_path . '/';
 		$url .= '?action=get&object_class=Node&object_id=' . $this->id;
 		
-		$request = new HTTP_Request2(
-	        'http://rapidshare.com/cgi-bin/rsapi.cgi?sub=nextuploadserver_v1'
-	    );
-	    $server  = $request->send()->getBody();
-	 
 		$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
 		$output = $this->rest->send()->getBody();
 
@@ -114,4 +118,33 @@ class AuthPuppyNode
 		
 		
 	}
+}
+
+function apz_get_current_node(){
+	global $ap_node, $current_blog;
+	$blog_id = $current_blog->blog_id;
+	
+	$ap_noe = AuthpuppyNode::GetNode($blog_id);
+}
+
+function apz_init(){
+	get_current_node();
+	
+	add_action('option_name', 'apz_hijack_title');
+	
+}
+
+/*
+	Completly change the title of a site to the authpuppy value
+*/
+function apz_hijack_title($title){
+	global $ap_node;
+	
+	$node_title = $ap_node->title();
+	
+	if( $node_title ){
+		return 'AP ' . $node_title;
+	}
+	
+	return $title;
 }
