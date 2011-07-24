@@ -130,7 +130,7 @@ function apz_get_current_node(){
 function apz_init(){
 	get_current_node();
 	
-	add_action('option_name', 'apz_hijack_title');
+	add_action('option_blogname', 'apz_hijack_title');
 	
 }
 
