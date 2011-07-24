@@ -57,8 +57,8 @@ class AuthPuppyNode
 	
 	function online_users(){
 		$this->fetch_node_info();
-		print_r($this->node_info);
-		$nb = $this->node_info->NumOnlineUsers;
+		
+		$nb = $this->node_info->NumOnlineUsers > 0 ? $this->node_info->NumOnlineUsers : 0;
 		
 		return $nb;
 	}
@@ -162,6 +162,6 @@ function apz_connected_users(){
 	global $ap_node;
 	
 	if ($ap_node){
-		return $ap_node->online_users();
+		echo $ap_node->online_users();
 	}
 }
