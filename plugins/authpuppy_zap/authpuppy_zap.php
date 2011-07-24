@@ -134,7 +134,7 @@ function apz_init(){
 	error_reporting(E_ALL);
 	ini_set('display_errors','On');
 	
-	get_current_node();
+	apz_get_current_node();
 	
 	add_action('option_blogname', 'apz_hijack_title');
 	
