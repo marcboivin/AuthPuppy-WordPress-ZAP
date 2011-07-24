@@ -55,7 +55,7 @@ class AuthPuppyNode
 		$this->cache = $Cache_Lite;
 	}
 	
-	function OnlineUsers(){
+	function online_users(){
 		$this->fetch_node_info();
 		$nb = $this->node_info->NumOnlineUsers ? $this->node_info->NumOnlineUsers : 0;
 		
@@ -159,4 +159,12 @@ function apz_hijack_title($title){
 	}
 	
 	return $title;
+}
+
+function apz_connected_users(){
+	global $ap_node;
+	
+	if ($ap_node){
+		return $ap_node->online_users();
+	}
 }
