@@ -132,7 +132,7 @@ function apz_get_current_node(){
 	
 	echo 'Blog ID: '. $node_id;
 	
-	$ap_noe = AuthpuppyNode::GetNode($node_id);
+	$ap_node = AuthpuppyNode::GetNode($node_id);
 }
 
 function apz_init(){
