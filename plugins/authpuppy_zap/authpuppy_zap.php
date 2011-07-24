@@ -20,7 +20,7 @@ define('APZ_SECURE', 'TRUE'); // Do we use HTTPS?
 define('APZ_WS_PATH', 'ws'); // Where is the webservice? By default it's /ws/
 
 // If we initialize before that, we fubar the whole thing
-add_action('wp-head', 'apz_init');
+add_action('wp_head', 'apz_init');
 
 
 global $Cache_Lite;
