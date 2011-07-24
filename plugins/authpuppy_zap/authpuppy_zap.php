@@ -125,6 +125,9 @@ class AuthPuppyNode
 
 function apz_get_current_node(){
 	global $ap_node, $current_blog;
+	
+	print_r($current_blog);
+	
 	$blog_id = $current_blog->blog_id;
 	
 	echo 'Blog ID: '. $blog_id;
