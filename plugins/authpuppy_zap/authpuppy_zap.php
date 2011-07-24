@@ -19,6 +19,8 @@ define('APZ_SERVER_URL', 'auth.zapquebec.org'); // Where is your auth server
 define('APZ_SECURE', 'TRUE'); // Do we use HTTPS?
 define('APZ_WS_PATH', 'ws'); // Where is the webservice? By default it's /ws/
 
+add_action('init', 'apz_init');
+
 
 global $Cache_Lite;
 // Set a few options
