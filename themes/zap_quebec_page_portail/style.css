@@ -247,6 +247,10 @@ body{
     width: 100px;
 }
 
+#main {
+    overflow: hidden;
+}
+
 #content {
     background: #e6e7e7;
     float: right;
