@@ -152,7 +152,7 @@ function apz_hijack_title($title){
 	$node_title = $ap_node->title();
 	
 	if( $node_title ){
-		return 'AP ' . $node_title;
+		return $node_title;
 	}
 	
 	return $title;
