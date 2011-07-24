@@ -57,7 +57,7 @@ class AuthPuppyNode
 	
 	function online_users(){
 		$this->fetch_node_info();
-		print_r($this->fetch_node_info);
+		print_r($this->node_info);
 		$nb = $this->node_info->NumOnlineUsers > 0 ? $this->node_info->NumOnlineUsers : 0;
 		
 		return $nb;
