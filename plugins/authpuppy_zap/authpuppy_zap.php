@@ -114,8 +114,6 @@ class AuthPuppyNode
 		// No cache, we fetch the object and save it in cache
 		$object = AuthPuppyNode::CreateFromConstant($node_id);
 		
-		print_r($object);
-		
 		$Cache_Lite->save($object, $node_id);
 		
 		return $object;
@@ -126,8 +124,6 @@ class AuthPuppyNode
 
 function apz_get_current_node(){
 	global $ap_node, $current_blog;
-	
-	print_r($current_blog);
 	
 	$node_id = str_replace('/', '', $current_blog->path);
 	
