@@ -27,7 +27,7 @@ global $Cache_Lite;
 // Set a few options
 $options = array(
     'cacheDir' => '/tmp/',
-    'lifeTime' => 180,
+    'lifeTime' => 900,
 	'automaticSerialization' => true	
 );
 
@@ -127,6 +127,7 @@ function apz_get_current_node(){
 	global $ap_node, $current_blog;
 	
 	print_r($_REQUEST);
+	print_r($_SERVER);
 	
 	$node_id = str_replace('/', '', $current_blog->path);
 	
