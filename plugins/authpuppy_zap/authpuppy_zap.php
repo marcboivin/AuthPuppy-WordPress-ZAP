@@ -43,6 +43,7 @@ class AuthPuppyNode
 	var $rest;
 	var $node_info = false;
 	var $cache;
+	var $in_error = false; // If we set in_error to true, we will prevent more request to the server
 	
 	function __construct($id, $server_address, $ws_path, $secure=false){
 		global $Cache_Lite;
@@ -74,7 +75,7 @@ class AuthPuppyNode
 	}
 	
 	private function fetch_node_info(){
-		if($this->node_info)
+		if($this->node_info || $this->in_error)
 			return true; // True means, infos are there leave the request alone
 		$url = 'http';
 		$url .= $this->secure ? 's' : '';
@@ -86,6 +87,7 @@ class AuthPuppyNode
 			$output = $this->rest->send()->getBody();
 		} catch (Exception $e) {
 			echo 'Exception, no data';
+			$this->in_error = true;
 			return false;
 		}
 
