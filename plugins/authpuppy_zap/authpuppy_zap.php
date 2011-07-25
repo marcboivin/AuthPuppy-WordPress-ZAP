@@ -84,8 +84,8 @@ class AuthPuppyNode
 		try {
 			$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
 			$output = $this->rest->send()->getBody();
-		} catch (HTTP_Request2_ConnectionException $e) {
-			echo 'Connection times out, no data';
+		} catch (Exception $e) {
+			echo 'Exception, no data';
 			return false;
 		}
 
@@ -130,13 +130,12 @@ class AuthPuppyNode
 function apz_get_current_node(){
 	global $ap_node, $current_blog;
 	
+	// 404, maybe the blog just wasn't created. No excuses, we try and fetch it anyway!
 	if(is_404()){
 		$node_id = str_replace('/', '', $_SERVER['REQUEST_URI']);
 	}else{
 		$node_id = str_replace('/', '', $current_blog->path);	
 	}
-	
-	echo $node_id;
 	
 	$ap_node = AuthpuppyNode::GetNode($node_id);
 }
