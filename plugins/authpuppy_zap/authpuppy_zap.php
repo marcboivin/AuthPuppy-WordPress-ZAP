@@ -129,7 +129,11 @@ function apz_get_current_node(){
 	print_r($_REQUEST);
 	print_r($_SERVER);
 	
-	$node_id = str_replace('/', '', $current_blog->path);
+	if(is_home()){
+		$node_id = str_replace('/', '', $_SERVER['REQUEST_URI']);
+	}else{
+		$node_id = str_replace('/', '', $current_blog->path);	
+	}
 	
 	$ap_node = AuthpuppyNode::GetNode($node_id);
 }
