@@ -85,6 +85,7 @@ class AuthPuppyNode
 			$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
 			$output = $this->rest->send()->getBody();
 		} catch (HTTP_Request2_ConnectionException $e) {
+			echo 'Connection times out, no data';
 			return false;
 		}
 
@@ -129,14 +130,13 @@ class AuthPuppyNode
 function apz_get_current_node(){
 	global $ap_node, $current_blog;
 	
-	print_r($_REQUEST);
-	print_r($_SERVER);
-	
 	if(is_home()){
 		$node_id = str_replace('/', '', $_SERVER['REQUEST_URI']);
 	}else{
 		$node_id = str_replace('/', '', $current_blog->path);	
 	}
+	
+	echo $node_id;
 	
 	$ap_node = AuthpuppyNode::GetNode($node_id);
 }
