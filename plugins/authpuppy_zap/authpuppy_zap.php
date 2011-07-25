@@ -135,6 +135,7 @@ function apz_get_current_node(){
 		echo $_SERVER['REQUEST_URI'];
 		$node_id = str_replace('/', '', $_SERVER['REQUEST_URI']);
 	}else{
+		echo 'NOT HOME';
 		$node_id = str_replace('/', '', $current_blog->path);	
 	}
 	
