@@ -86,7 +86,6 @@ class AuthPuppyNode
 			$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
 			$output = $this->rest->send()->getBody();
 		} catch (Exception $e) {
-			echo 'Exception, no data';
 			$this->in_error = true;
 			return false;
 		}
