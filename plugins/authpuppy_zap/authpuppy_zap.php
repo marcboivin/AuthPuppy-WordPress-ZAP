@@ -81,9 +81,12 @@ class AuthPuppyNode
 		$url .= '://' . $this->server_address . '/';
 		$url .= $this->ws_path . '/';
 		$url .= '?action=get&object_class=Node&object_id=' . $this->id;
-		
-		$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
-		$output = $this->rest->send()->getBody();
+		try {
+			$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
+			$output = $this->rest->send()->getBody();
+		} catch (HTTP_Request2_ConnectionException $e) {
+			return false;
+		}
 
 		
 		$json = json_decode($output);
