@@ -126,6 +126,8 @@ class AuthPuppyNode
 function apz_get_current_node(){
 	global $ap_node, $current_blog;
 	
+	print_r($_REQUEST);
+	
 	$node_id = str_replace('/', '', $current_blog->path);
 	
 	$ap_node = AuthpuppyNode::GetNode($node_id);
