@@ -130,8 +130,8 @@ class AuthPuppyNode
 function apz_get_current_node(){
 	global $ap_node, $current_blog;
 	
-	if(is_home()){
-		echo 'HOME';
+	if(is_404()){
+		echo '404';
 		echo $_SERVER['REQUEST_URI'];
 		$node_id = str_replace('/', '', $_SERVER['REQUEST_URI']);
 	}else{
