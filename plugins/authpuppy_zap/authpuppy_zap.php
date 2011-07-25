@@ -131,6 +131,8 @@ function apz_get_current_node(){
 	global $ap_node, $current_blog;
 	
 	if(is_home()){
+		echo 'HOME';
+		echo $_SERVER['REQUEST_URI'];
 		$node_id = str_replace('/', '', $_SERVER['REQUEST_URI']);
 	}else{
 		$node_id = str_replace('/', '', $current_blog->path);	
