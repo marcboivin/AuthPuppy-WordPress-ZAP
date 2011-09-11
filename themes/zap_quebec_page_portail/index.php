@@ -17,8 +17,8 @@
 						'show_summary' => 1,
 						'items' => 3,
 						'before_widget' => '',
-						'before_title' => '',
-						'after_title' => '',
+						'before_title' => '<h2>',
+						'after_title' => '</h2>',
 						'after_widget' => ''
 						
 					);

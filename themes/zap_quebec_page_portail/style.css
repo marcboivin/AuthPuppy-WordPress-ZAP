@@ -250,6 +250,16 @@ body{
 #main {
     overflow: hidden;
 }
+#online_users {
+    color: #6DCFFA;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+#online_users {
+    color: #55A4C6;
+    font-size: 2em;
+}
 
 #content {
     background: #e6e7e7;
@@ -261,10 +271,25 @@ body{
     float: left;
     width: 252px;
 }
+#nouvelles-zap h2 {
+    color: #7d8700;
+    font-size: 1.4em;
+}
+
+#nouvelles-zap ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
 #nouvelles-zap li {
     background: #cedd6c;
     padding: 6px 13px;
+}
+
+#nouvelles-zap li a {
+    color: #060601;
+    font-size: 1.3em;
 }
 
 
