@@ -262,6 +262,10 @@ body{
     width: 252px;
 }
 
+#nouvelles-zap li {
+    background: #cedd6c;
+    padding: 6px 13px;
+}
 
 
 

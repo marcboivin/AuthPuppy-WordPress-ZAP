@@ -148,6 +148,7 @@ function apz_init(){
 	apz_get_current_node();
 	
 	add_action('option_blogname', 'apz_hijack_title', 1, 1);
+	add_filter('wp_title', 'apz_hijack_title');
 	
 }
 
@@ -156,7 +157,7 @@ function apz_init(){
 */
 function apz_hijack_title($title){
 	global $ap_node;
-	// It break the loading, check it out.
+	// It breaks the loading, check it out.
 	$node_title = $ap_node->title();
 	
 	if( $node_title ){
@@ -170,6 +171,17 @@ function apz_connected_users(){
 	global $ap_node;
 	
 	if ($ap_node){
-		echo $ap_node->online_users();
+		echo apz_get_connected_users($ap_node->id, $ap_node);
 	}
+}
+
+function apz_get_connected_users($node_id, $node_object = null){
+	if($node_object){
+		return $node_object->online_users();
+	}
+	
+	$node = AuthPuppyNode::GetNode($node_id);
+	
+	return $node->online_users();
+	
 }

@@ -2,6 +2,7 @@
 
 <section id="content">
 	<h2>Bienvenu sur le réseau de ZAP Québec</h2>
+	<?php dynamic_sidebar('portail_content'); ?>
 </section>
 
 <section id="nouvelles-zap">
