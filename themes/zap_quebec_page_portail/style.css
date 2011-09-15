@@ -282,6 +282,9 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdd600', endColorstr='#acbf00',GradientType=0 ); /* IE6-9 */
     background: linear-gradient(top, rgba(189,214,0,1) 0%,rgba(179,200,0,1) 85%,rgba(172,191,0,1) 100%); /* W3C */
     
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
     margin: 0;
 }
 
