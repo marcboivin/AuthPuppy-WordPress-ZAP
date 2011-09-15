@@ -298,6 +298,12 @@ body{
     text-transform: uppercase;
 }
 
+#nouvelles-zap h2 a:first-child {
+    display: absolute;
+    right: -5px;
+    top: -5px;
+}
+
 #nouvelles-zap ul {
     margin: 0;
     padding: 0;
