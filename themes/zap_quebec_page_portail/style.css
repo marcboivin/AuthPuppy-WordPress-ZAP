@@ -247,6 +247,11 @@ body{
     width: 100px;
 }
 
+header h1 {
+    color: #6cd3fb;
+    font-weight: normal;
+}
+
 #main {
     overflow: hidden;
 }
