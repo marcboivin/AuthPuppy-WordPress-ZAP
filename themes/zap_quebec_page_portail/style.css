@@ -306,6 +306,7 @@ header h1 span {
     background: linear-gradient(top, rgba(46,153,201,1) 0%,rgba(9,122,168,1) 50%,rgba(9,122,168,1) 51%,rgba(29,123,164,1) 100%); /* W3C */
     color: white;
     font-weight: 100;
+    margin: 0 0 20px 0;
     padding: 10px 15px;
     
 }
