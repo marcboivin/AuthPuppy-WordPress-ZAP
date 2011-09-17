@@ -249,7 +249,13 @@ body{
 
 header h1 {
     color: #6cd3fb;
+    font-size: 2em;
     font-weight: normal;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    font-weight: bold;
 }
 
 #main {
