@@ -247,15 +247,27 @@ body{
     width: 100px;
 }
 
+header {
+    overflow: hidden;
+}
+
 header h1 {
     color: #6cd3fb;
+    float: right;
     font-size: 4em;
     font-weight: 100;
     text-transform: uppercase;
+    width: 400px;
 }
 
 header h1 span {
+    display: block;
     font-weight: bold;
+}
+
+#signature {
+    float: left;
+    width: 232px;
 }
 
 #main {
