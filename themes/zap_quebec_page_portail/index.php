@@ -1,10 +1,12 @@
 <?php get_header(); ?>
 
 <section id="content">
-	<h2>Bienvenu sur le réseau de ZAP Québec</h2>
-	<?php do_action('zap_before_content'); ?>
-	<?php dynamic_sidebar('portail_content'); ?>
-	<?php do_action('zap_after_content'); ?>
+	<h2>Bienvenue sur le réseau de ZAP Québec</h2>
+	<div id="blogcontent">
+		<?php do_action('zap_before_content'); ?>
+		<?php dynamic_sidebar('portail_content'); ?>
+		<?php do_action('zap_after_content'); ?>
+	</div>
 	
 </section>
 
