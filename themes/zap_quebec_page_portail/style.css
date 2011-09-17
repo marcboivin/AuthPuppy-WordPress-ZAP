@@ -287,6 +287,8 @@ header h1 span {
 
 #content {
     background: #e6e7e7;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     float: right;
     width: 605px;
 }
@@ -304,6 +306,8 @@ header h1 span {
     background: -ms-linear-gradient(top, rgba(46,153,201,1) 0%,rgba(9,122,168,1) 50%,rgba(9,122,168,1) 51%,rgba(29,123,164,1) 100%); /* IE10+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e99c9', endColorstr='#1d7ba4',GradientType=0 ); /* IE6-9 */
     background: linear-gradient(top, rgba(46,153,201,1) 0%,rgba(9,122,168,1) 50%,rgba(9,122,168,1) 51%,rgba(29,123,164,1) 100%); /* W3C */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     color: white;
     font-weight: 100;
     margin: 0 0 20px 0;
