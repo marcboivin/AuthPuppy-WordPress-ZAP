@@ -300,7 +300,7 @@ body{
 }
 
 #nouvelles-zap h2 a:first-child {
-    display: absolute;
+    display: none;
     right: -5px;
     top: -5px;
 }
