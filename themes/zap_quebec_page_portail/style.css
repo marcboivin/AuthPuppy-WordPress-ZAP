@@ -253,7 +253,7 @@ header {
 
 header h1 {
     color: #6cd3fb;
-    float: right;
+    float: left;
     font-size: 4em;
     font-weight: 100;
     text-transform: uppercase;
@@ -266,7 +266,7 @@ header h1 span {
 }
 
 #signature {
-    float: right;
+    float: left;
     width: 232px;
 }
 
