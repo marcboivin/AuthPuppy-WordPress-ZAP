@@ -264,6 +264,7 @@ body{
 #content {
     background: #e6e7e7;
     float: right;
+    padding: 0 10px 10px 10px;
     width: 605px;
 }
 
@@ -317,8 +318,17 @@ body{
 
 #nouvelles-zap li a {
     color: #060601;
+    display: block;
     font-size: 1.3em;
+    padding: 10px;
+    text-decoration: none;
 }
+
+#nouvelles-zap li a:hover {
+    text-decoration: underline;
+}
+
+
 
 
 
