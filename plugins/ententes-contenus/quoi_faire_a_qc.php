@@ -17,7 +17,7 @@ add_action('zap_before_content', 'qfaqc_content');
 
 function qfaqc_content(){
 	?>
-		<iframe class="qfaqc" src="http://www.quoifaireaquebec.com/feeds/todayZAP" width="100%" hiehgt="242">
+		<iframe class="qfaqc" src="http://www.quoifaireaquebec.com/feeds/todayZAP" width="100%" height="242">
 			<p>Vore fureteur ne supporte pas les iframes.</p>
 		</iframe>
 	<?php
