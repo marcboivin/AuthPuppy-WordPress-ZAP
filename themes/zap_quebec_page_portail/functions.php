@@ -2,7 +2,9 @@
 
 add_filter('option_blogname', 'zap_filter_ZAP', 10, 1);
 
-define('ZAP_DEFAULT_PLUGINS', 'ententes-contenus/quoi_faire_a_qc')
+define('ZAP_DEFAULT_PLUGINS', 'ententes-contenus/quoi_faire_a_qc');
+
+zap_load_default_content(ZAP_DEFAULT_PLUGINS);
 /*
 	emove ZAP from a title string
  */
