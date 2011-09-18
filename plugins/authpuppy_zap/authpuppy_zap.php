@@ -85,6 +85,7 @@ class AuthPuppyNode
 		$url .= $this->ws_path . '/';
 		$url .= '?action=get&object_class=Node&object_id=' . $this->id;
 		try {
+			print_r($this->fetcher_object);
 			$this->fetcher_object->setMethod('GET');
 			$this->fetcher_object->setUrl($url);
 
