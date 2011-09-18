@@ -242,6 +242,7 @@ body{
     background: url(http://moijezap.org/medias/img/zapquebec.png) no-repeat;
     display: block;
     height: 160px;
+    margin-right: 30px;
     overflow: hidden;
     text-indent: -5000em;
     width: 100px;
@@ -269,6 +270,7 @@ header h1 span {
 #signature {
     float: left;
     overflow: hidden;
+    padding-top: 38px;
     position: relative;
     width: 232px;
 }
@@ -278,6 +280,7 @@ header h1 span {
 }
 
 #ms {
+    margin-top: 25px;
     width: 60px;
 }
 
@@ -292,6 +295,7 @@ header h1 span {
 
 #twitter {
     background-position: 0 -52px;
+    margin-top: 10px;
 }
 
 #main {
