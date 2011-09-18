@@ -346,7 +346,6 @@ header h1 span {
 
 #nouvelles-zap {
     float: left;
-    text-align: center;
     width: 252px;
 }
 
@@ -364,6 +363,7 @@ header h1 span {
     border-top-right-radius: 10px;
     
     margin: 0;
+    text-align: center;
 }
 
 #nouvelles-zap h2 a {
