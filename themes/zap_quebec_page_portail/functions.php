@@ -37,9 +37,10 @@ function zap_load_default_content($plugins){
 }
 
 function zap_title(){
-	if(function_exists('apz_hijack_title'))
+	if(function_exists('apz_hijack_title')){
 		echo apz_hijack_title();
-	else
+	}	
+	else{
 		wp_title( '|', true, 'right' );
-	
+	}
 }
