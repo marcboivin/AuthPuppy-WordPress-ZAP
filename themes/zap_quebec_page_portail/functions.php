@@ -15,7 +15,7 @@ function zap_filter_ZAP($title){
 	$title = preg_replace('/^ZAP( -|-|—| —)?/i', '', $title);
 	
 	// Remove the stupid number identifiers
-	$title = preg_replace('/( -|-|—| —|[0-9]| )?$/i', '', $title);
+	$title = preg_replace('/( -|-|—| —|[0-9]| )?$/g', '', $title);
 	
 	return $title;
 }
