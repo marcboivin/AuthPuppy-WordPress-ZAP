@@ -44,10 +44,12 @@ class AuthPuppyNode
 	var $node_info = false;
 	var $cache;
 	var $in_error = false; // If we set in_error to true, we will prevent more request to the server
+	var $fetcher_object = null; // Ususally HTTP_Request2, but it could be a mock for testing
 	
-	function __construct($id, $server_address, $ws_path, $secure=false){
+	function __construct($fetcher_object, $id, $server_address, $ws_path, $secure=false){
 		global $Cache_Lite;
 		
+		$this->fetcher_object = $fetcher_object;
 		$this->ws_path = $ws_path;
 		$this->server_address = $server_address;
 		$this->id = $id;
@@ -83,8 +85,11 @@ class AuthPuppyNode
 		$url .= $this->ws_path . '/';
 		$url .= '?action=get&object_class=Node&object_id=' . $this->id;
 		try {
-			$this->rest = new HTTP_Request2($url, HTTP_Request2::METHOD_GET);
-			$output = $this->rest->send()->getBody();
+			$this->fetcher_object.setMethod('GET');
+			$this->fetcher_object.setUrl($url);
+
+			$this->rest = $this->fetcher_object->send();
+			$output = $this->rest->getBody();
 		} catch (Exception $e) {
 			$this->in_error = true;
 			return false;
