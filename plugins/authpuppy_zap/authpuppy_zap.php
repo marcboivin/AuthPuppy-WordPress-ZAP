@@ -111,7 +111,10 @@ class AuthPuppyNode
 	
 	// Take the gateway ID in and crete an AuthPuppyNode with the defined constant
 	static public function CreateFromConstant($node_id){
-		return new AuthPuppyNode($node_id, APZ_SERVER_URL, APZ_WS_PATH, APZ_SECURE);
+		
+		$r = new HTTP_Request2();
+		
+		return new AuthPuppyNode($r, $node_id, APZ_SERVER_URL, APZ_WS_PATH, APZ_SECURE);
 	}
 	
 	static public function GetNode($node_id){
