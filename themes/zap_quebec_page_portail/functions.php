@@ -1,6 +1,6 @@
 <?php
 
-add_filter('option_blogname', 'zap_filter_ZAP', 10, 1);
+add_filter('apz_node_title', 'zap_clean_title', 10, 1);
 
 define('ZAP_DEFAULT_PLUGINS', 'ententes-contenus/quoi_faire_a_qc');
 
@@ -8,7 +8,7 @@ zap_load_default_content(ZAP_DEFAULT_PLUGINS);
 /*
 	emove ZAP from a title string
  */
-function zap_filter_ZAP($title){
+function zap_clean_title($title){
 	$title = trim($title); // caus dave ain't always careful when typing names
 	
 	// Remove the fugly, inconsistant ZAP, we replace it with our own in the markup
@@ -33,14 +33,5 @@ function zap_load_default_content($plugins){
 		
 		$plugin_path = ABSPATH . 'wp-content/plugins/{$plugin}.php';
 	  	activate_plugin($plugin_path);
-	}
-}
-
-function zap_title(){
-	if(function_exists('apz_hijack_title')){
-		echo apz_hijack_title("");
-	}	
-	else{
-		wp_title( '|', true, 'right' );
 	}
 }

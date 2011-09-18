@@ -169,10 +169,10 @@ function apz_hijack_title($title){
 	$node_title = $ap_node->title();
 	
 	if( $node_title ){
-		return $node_title;
+		return apply_filter('apz_node_title', $node_title);
 	}
 	
-	return $title;
+	return apply_filter('apz_node_title', $title);
 }
 
 function apz_connected_users(){
