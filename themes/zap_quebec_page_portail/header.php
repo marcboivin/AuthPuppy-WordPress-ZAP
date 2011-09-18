@@ -65,7 +65,6 @@
 <body <?php body_class(); ?>>
 	<div id="container">
     <header>
-		<h1><span>ZAP</span> <?php bloginfo('name'); ?></h1>
 		<div id="signature">
 			<a href="http://zapquebec.org" id="logo">Service offert par ZAP Québec</a>
 			<div id="ms">
@@ -73,6 +72,8 @@
 			<a href="http://twitter.com/#!/zapquebec" id="twitter" class="ms">Suivez nous sur Twitter</a>
 			</div>
 		</div>
+	
+		<h1><span>ZAP</span> <?php bloginfo('name'); ?></h1>
 	
 		<div id="online_users"><span><?php apz_connected_users(); ?></span> usagé(s) en ligne</div>
     </header>
