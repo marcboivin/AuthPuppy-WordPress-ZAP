@@ -268,15 +268,26 @@ header h1 span {
 
 #signature {
     float: left;
+    overflow: hidden;
+    position: relative;
     width: 232px;
+}
+
+#signature > * {
+    float: right;
 }
 
 .ms {
     background: transparent url(images/ms.png) no-repeat;
     display: block;
-    height: 90px;
+    height: 48px;
+    overflow: hidden;
     text-indent: -5000em;
-    width: 90px;
+    width: 51px;
+}
+
+#twitter {
+    background-position: 0 -52px;
 }
 
 #main {

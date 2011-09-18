@@ -67,10 +67,13 @@
     <header>
 		<div id="signature">
 			<a href="http://zapquebec.org" id="logo">Service offert par ZAP Québec</a>
-			<a href="http://www.facebook.com/pages/ZAP-Qu%C3%A9bec/114289998224" id="facebook" class="ms">Notre page Facebok</a>
+			<div id="ms">
+			<a href="http://www.facebook.com/pages/ZAP-Qu%C3%A9bec/114289998224" id="facebook" class="ms">Notre page Facebook</a>
 			<a href="http://twitter.com/#!/zapquebec" id="twitter" class="ms">Suivez nous sur Twitter</a>
-			<div id="online_users"><span><?php apz_connected_users(); ?></span> usagé(s) en ligne</div>
+			</div>
 		</div>
+		
+		<div id="online_users"><span><?php apz_connected_users(); ?></span> usagé(s) en ligne</div>
 		
 		<h1><span>ZAP</span> <?php bloginfo('name'); ?></h1>
     </header>
