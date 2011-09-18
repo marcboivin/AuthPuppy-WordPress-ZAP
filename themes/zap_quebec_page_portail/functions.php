@@ -11,7 +11,11 @@ zap_load_default_content(ZAP_DEFAULT_PLUGINS);
 function zap_filter_ZAP($title){
 	$title = trim($title); // caus dave ain't always careful when typing names
 	
+	// Remove the fugly, inconsistant ZAP, we replace it with our own in the markup
 	$title = preg_replace('/^ZAP( -|-|—| —)?/i', '', $title);
+	
+	// Remove the stupid number identifiers
+	$title = preg_replace('/( -|-|—| —|[0-9]| )?$/i', '', $title);
 	
 	return $title;
 }
