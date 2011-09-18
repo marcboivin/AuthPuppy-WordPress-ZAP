@@ -398,7 +398,7 @@ header h1 span {
     color: #060601;
     display: block;
     font-size: 1.3em;
-    padding: 10px;
+    padding: 0 0 10px 0;
     text-decoration: none;
 }
 

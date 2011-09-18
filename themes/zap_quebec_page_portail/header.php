@@ -75,6 +75,6 @@
 	
 		<h1><span>ZAP</span> <?php bloginfo('name'); ?></h1>
 	
-		<div id="online_users"><span><?php apz_connected_users(); ?></span> usagé(s) en ligne</div>
+		<div id="online_users"><span><?php zap_connected_users(); ?></span> usagé(s) en ligne</div>
     </header>
     <div id="main" role="main">
