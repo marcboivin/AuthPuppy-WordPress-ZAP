@@ -35,3 +35,11 @@ function zap_load_default_content($plugins){
 	  	activate_plugin($plugin_path);
 	}
 }
+
+function zap_title(){
+	if(function_exists('apz_hijack_title'))
+		echo apz_hijack_title();
+	else
+		wp_title( '|', true, 'right' );
+	
+}

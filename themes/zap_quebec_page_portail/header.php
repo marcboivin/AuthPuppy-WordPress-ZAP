@@ -12,7 +12,7 @@
 	 */
 	global $page, $paged;
 
-	wp_title( '|', true, 'right' );
+	zap_title( );
 
 	// Add the blog name.
 	bloginfo( 'name' );
