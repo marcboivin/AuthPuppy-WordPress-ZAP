@@ -35,3 +35,13 @@ function zap_load_default_content($plugins){
 	  	activate_plugin($plugin_path);
 	}
 }
+
+function zap_connected_users(){
+	if(function_exists('apz_connected_users')){
+		global $ap_node;
+		
+		if($ap_node){
+			apz_connected_users();
+		}
+	}
+}
