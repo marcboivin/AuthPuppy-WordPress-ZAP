@@ -12,7 +12,7 @@
 	 */
 	global $page, $paged;
 
-	zap_title( );
+	zap_title();
 
 	// Add the blog name.
 	bloginfo( 'name' );
