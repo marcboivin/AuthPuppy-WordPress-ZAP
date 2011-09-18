@@ -271,6 +271,14 @@ header h1 span {
     width: 232px;
 }
 
+.ms {
+    background: transparent url(images/ms.png) no-repeat;
+    display: block;
+    height: 90px;
+    text-indent: -5000em;
+    width: 90px;
+}
+
 #main {
     overflow: hidden;
 }
