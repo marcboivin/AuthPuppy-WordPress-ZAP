@@ -277,6 +277,10 @@ header h1 span {
     float: right;
 }
 
+#ms {
+    width: 60px;
+}
+
 .ms {
     background: transparent url(images/ms.png) no-repeat;
     display: block;
