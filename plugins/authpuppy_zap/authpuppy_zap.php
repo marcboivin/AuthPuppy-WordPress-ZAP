@@ -78,15 +78,15 @@ class AuthPuppyNode
 	
 	private function fetch_node_info(){
 		if($this->node_info || $this->in_error)
-			return true; // True means, infos are there leave the request alone
+			return true; // True means: infos are there leave the request alone
 		$url = 'http';
 		$url .= $this->secure ? 's' : '';
 		$url .= '://' . $this->server_address . '/';
 		$url .= $this->ws_path . '/';
 		$url .= '?action=get&object_class=Node&object_id=' . $this->id;
 		try {
-			$this->fetcher_object.setMethod('GET');
-			$this->fetcher_object.setUrl($url);
+			$this->fetcher_object->setMethod('GET');
+			$this->fetcher_object->setUrl($url);
 
 			$this->rest = $this->fetcher_object->send();
 			$output = $this->rest->getBody();
