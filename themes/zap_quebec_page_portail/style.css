@@ -354,8 +354,9 @@ header h1 span {
 }
 
 #nouvelles-zap ul {
+    background: #CEDD6C;
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
     list-style: none;
 }
 
