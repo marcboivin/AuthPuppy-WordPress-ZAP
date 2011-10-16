@@ -42,20 +42,21 @@ class AuthPuppyNode
 	var $ws_path;
 	var $rest;
 	var $node_info = false;
-	var $cache;
+	var $cache = false;
 	var $in_error = false; // If we set in_error to true, we will prevent more request to the server
 	var $fetcher_object = null; // Ususally HTTP_Request2, but it could be a mock for testing
 	
-	function __construct($fetcher_object, $id, $server_address, $ws_path, $secure=false){
-		global $Cache_Lite;
+	function __construct($fetcher_object, $id, $server_address, $ws_path, $cache = false , $secure=false){
 		
 		$this->fetcher_object = $fetcher_object;
 		$this->ws_path = $ws_path;
 		$this->server_address = $server_address;
 		$this->id = $id;
 		$this->secure = $secure;
+		if($cache){
+			$this->cache = $cache;
+		}
 		
-		$this->cache = $Cache_Lite;
 	}
 	
 	function online_users(){
@@ -105,16 +106,22 @@ class AuthPuppyNode
 		$this->node_info = $json->values;
 		
 		// Save in cache
-		$this->cache->save($this, $this->id);
+		if($this->cache){
+			$this->cache->save($this, $this->id);
+		}
+		
 		
 	}
 	
 	// Take the gateway ID in and crete an AuthPuppyNode with the defined constant
 	static public function CreateFromConstant($node_id){
+		global $Cache_Lite;
 		
 		$r = new HTTP_Request2();
 		
-		return new AuthPuppyNode($r, $node_id, APZ_SERVER_URL, APZ_WS_PATH, APZ_SECURE);
+		$cache = $Cache_Lite ? $Cache_Lite : false;
+		
+		return new AuthPuppyNode($r, $node_id, APZ_SERVER_URL, APZ_WS_PATH, $cache, APZ_SECURE);
 	}
 	
 	static public function GetNode($node_id){
