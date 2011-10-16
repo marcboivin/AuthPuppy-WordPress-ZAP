@@ -1,5 +1,8 @@
 <?php
 
+// Relax Mathieu's settings!
+error_reporting(E_ERROR);
+
 add_filter('apz_node_title', 'zap_clean_title', 10, 1);
 
 define('ZAP_DEFAULT_PLUGINS', 'ententes-contenus/quoi_faire_a_qc');
