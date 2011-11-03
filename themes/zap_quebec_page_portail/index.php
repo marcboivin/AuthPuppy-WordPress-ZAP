@@ -16,7 +16,7 @@
 			$rss = new WP_Widget_RSS();
 			$args = array( 
 						'title' => 'Dernières nouelles',
-						'url' => 'http://zapquebec.org/feed/',
+						'url' => 'http://www.zapquebec.org/feed/',
 						'show_author' => 0, 
 						'show_date' => 0, 
 						'show_summary' => 1,
