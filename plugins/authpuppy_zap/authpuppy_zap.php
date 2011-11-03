@@ -158,7 +158,7 @@ function apz_get_current_node(){
 
 function apz_init(){
 	error_reporting(E_ALL);
-	ini_set('display_errors','On');
+	ini_set('display_errors','Off');
 	
 	apz_get_current_node();
 	
