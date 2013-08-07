@@ -20,8 +20,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width">
   <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
 
   <!-- All JavaScript at the bottom, except for Modernizr and Respond.
